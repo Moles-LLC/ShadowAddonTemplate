@@ -1,0 +1,29 @@
+{
+  "comment": "This file is entirely unused, the fabric mod is just to get the development environment",
+  "schemaVersion": 1,
+  "id": "shadow-example-addon",
+  "version": "${version}",
+  "name": "Shadow example addon",
+  "description": "An example for the shadow addon SDK",
+  "authors": [
+    "0x150"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/fart/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.shitcum.fart.client.ExampleAddonFabricClientMain"
+    ],
+    "main": [
+      "me.shitcum.fart.ExampleAddonFabricMain"
+    ]
+  },
+  "mixins": [
+  ],
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "minecraft": "1.18.2"
+  }
+}
