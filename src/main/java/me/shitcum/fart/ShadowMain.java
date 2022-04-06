@@ -6,8 +6,13 @@ import net.minecraft.util.Identifier;
 import net.shadow.client.feature.addon.Addon;
 import net.shadow.client.feature.command.Command;
 import net.shadow.client.feature.module.AddonModule;
+import net.shadow.client.helper.Texture;
+import net.shadow.client.helper.util.Utils;
 
+import javax.imageio.ImageIO;
+import java.io.InputStream;
 import java.util.List;
+import java.util.Objects;
 
 // Main class for the addon
 // Any class extending Addon is seen as main class
@@ -25,11 +30,25 @@ public class ShadowMain extends Addon {
     @Override
     public Identifier getIcon() {
         // this is the icon of the addon that gets shown in the addon screen
-        // i recommend downloading the icon from the internet, and registering it using Utils.registerBufferedImageTexture(bufferedImageFromInternet, identifierToUse);
+        // i recommend adding the icon as resource, and loading that when the icon is first requested
         // and then returning that identifier you used
         // this is an example
         // nullable for default icon
-        return new Identifier("textures/misc/enchanted_item_glint.png");
+        return loadIcon();
+    }
+    Texture iconStored = null;
+    Identifier loadIcon() {
+        if (iconStored != null) return iconStored;
+        InputStream is = getClass().getClassLoader().getResourceAsStream("unknown.png");
+        Objects.requireNonNull(is);
+        try {
+            iconStored = new Texture("amogussus");
+            Utils.registerBufferedImageTexture(iconStored, ImageIO.read(is));
+            is.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return iconStored;
     }
 
     @Override
