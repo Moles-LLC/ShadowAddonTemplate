@@ -9,3 +9,4 @@ This is an example for how to use the shadow addon SDK
 You can change anything you want in here, as long as it is compatible with the latest shadow SDK.
 ## Compiling
 To build the addon, just run the `build` task. The compiled addon will be in the build > libs folder
+.
