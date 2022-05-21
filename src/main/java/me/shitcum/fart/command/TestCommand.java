@@ -1,7 +1,6 @@
 package me.shitcum.fart.command;
 
 import net.shadow.client.feature.command.Command;
-import net.shadow.client.feature.command.argument.IntegerArgumentParser;
 import net.shadow.client.feature.command.argument.StreamlineArgumentParser;
 import net.shadow.client.feature.command.coloring.ArgumentType;
 import net.shadow.client.feature.command.coloring.PossibleArgument;
